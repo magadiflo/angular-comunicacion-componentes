@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-hijo',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HijoComponent implements OnInit {
 
+  @Input() nombreHijo: string = 'Sin nombre';
+  @Output() cambioNombreHijo = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cambiarNombre(): void {
+    this.nombreHijo = 'Juan Carlos';
+    this.cambioNombreHijo.emit(this.nombreHijo);
   }
 
 }
