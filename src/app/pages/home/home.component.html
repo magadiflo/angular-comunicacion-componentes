@@ -6,4 +6,4 @@
     Cambiar nombre
 </button>
 <hr>
-<app-hijo [nombreHijo]="nombre" (cambioNombreHijo)="nombre = $event"></app-hijo><!-- * El $event podemos enviarlo en un método para manejarlo en el ts -->
+<app-hijo [nombreHijo]="nombre" (cambioNombreHijo)="hijoCambioNombre($event)"></app-hijo>
